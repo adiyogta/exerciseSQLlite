@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class CRUDkontak extends AppCompatActivity {
-
+   //o
     EditText nama, phone, email, alamat;
     Spinner tipeUser;String mode="",idUser="0";
     Button btnSimpan, btnKembali;
