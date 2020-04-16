@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CRUDkontak"></activity>
+        <activity android:name=".clickList"></activity>
+        <activity android:name=".update" />
+        <activity android:name=".CRUDkontak" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

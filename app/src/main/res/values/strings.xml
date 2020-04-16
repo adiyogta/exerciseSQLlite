@@ -9,4 +9,9 @@
     <string name="simpan">SIMPAN</string>
     <string name="td">Tambah Data</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="kembali">kembali</string>
+    <string name="update">Update Data</string>
+    <string name="batal">Batal</string>
+    <string name="ud">Update Data</string>
+    <string name="data">Data</string>
 </resources>
