@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ListKontakAdapter custom = new ListKontakAdapter(null, newsList);
     ListView listView;
     public String[] idUserArray;
-    FloatingActionButton add;
+
 
     private long lastPressedTime;
     private static final int PERIOD = 2000;
@@ -93,14 +93,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
                                 alertDialog.setTitle("Hapus Data");
-                                alertDialog.setMessage("Kamu Yakin Mau Hapus Data ini?");
-                                alertDialog.setPositiveButton("YAKIN BANGET",
+                                alertDialog.setMessage("Anda Yakin Ingin Menghapus Data ini?");
+                                alertDialog.setPositiveButton("Hapus",
                                         new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int whichButton) {
 
                                                 DBHelper db = new DBHelper(getApplicationContext());
                                                 int status = db.HapusData(idUserArray[position]);
-                                                if(status   >0){
+                                                if(status >0){
+                                                    Intent i = new Intent(MainActivity.this, MainActivity.class);
+                                                    finish();
+                                                    overridePendingTransition(-1, -1);
+                                                    startActivity(i);
+                                                    overridePendingTransition(-1, -1);
                                                     Toast.makeText(MainActivity.this, "Data Berhasil Dihapus ",Toast.LENGTH_LONG).show();
                                                 }else{
                                                     Toast.makeText(MainActivity.this, "Data Gagal Dihapus ",Toast.LENGTH_LONG).show();
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                                             }
                                         });
 
-                                alertDialog.setNegativeButton("ENGGAK",
+                                alertDialog.setNegativeButton("Tidak",
                                         new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -131,11 +136,6 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("mode", "Tambah");
         startActivity(i);
         finish();
-        return v;
-    }
-
-    public View Reload(View v){
-        reloadData();
         return v;
     }
 
